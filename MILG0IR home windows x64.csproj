@@ -62,26 +62,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="functions\functionsClass.cs" />
+    <Compile Include="MILG0IR_connect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MILG0IR_connect.Designer.cs">
+      <DependentUpon>MILG0IR_connect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MILG0IR_splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MILG0IR_splash.Designer.cs">
+      <DependentUpon>MILG0IR_splash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MILG0IR_connect.resx">
+      <DependentUpon>MILG0IR_connect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="MILG0IR_splash.resx">
+      <DependentUpon>MILG0IR_splash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

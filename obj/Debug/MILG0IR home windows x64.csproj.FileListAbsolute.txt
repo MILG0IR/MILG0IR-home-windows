@@ -9,3 +9,14 @@ C:\Users\Robert\GitHub\MILG0IR\MILG0IR home windows x64\obj\Debug\MILG0IR home w
 C:\Users\Robert\GitHub\MILG0IR\MILG0IR home windows x64\obj\Debug\MILG0IR home windows x64.exe
 C:\Users\Robert\GitHub\MILG0IR\MILG0IR home windows x64\obj\Debug\MILG0IR home windows x64.pdb
 C:\Users\Robert\GitHub\MILG0IR\MILG0IR home windows x64\obj\Debug\MILG0IR_home_windows_x64.MILG0IR_connect.resources
+C:\Users\Robert\GitHub\MILG0IR\MILG0IR-home-windows-x64\bin\Debug\MILG0IR home windows x64.exe.config
+C:\Users\Robert\GitHub\MILG0IR\MILG0IR-home-windows-x64\bin\Debug\MILG0IR home windows x64.exe
+C:\Users\Robert\GitHub\MILG0IR\MILG0IR-home-windows-x64\bin\Debug\MILG0IR home windows x64.pdb
+C:\Users\Robert\GitHub\MILG0IR\MILG0IR-home-windows-x64\obj\Debug\MILG0IR home windows x64.csprojAssemblyReference.cache
+C:\Users\Robert\GitHub\MILG0IR\MILG0IR-home-windows-x64\obj\Debug\MILG0IR_home_windows_x64.MILG0IR_connect.resources
+C:\Users\Robert\GitHub\MILG0IR\MILG0IR-home-windows-x64\obj\Debug\MILG0IR_home_windows_x64.MILG0IR_splash.resources
+C:\Users\Robert\GitHub\MILG0IR\MILG0IR-home-windows-x64\obj\Debug\MILG0IR_home_windows_x64.Properties.Resources.resources
+C:\Users\Robert\GitHub\MILG0IR\MILG0IR-home-windows-x64\obj\Debug\MILG0IR home windows x64.csproj.GenerateResource.cache
+C:\Users\Robert\GitHub\MILG0IR\MILG0IR-home-windows-x64\obj\Debug\MILG0IR home windows x64.csproj.CoreCompileInputs.cache
+C:\Users\Robert\GitHub\MILG0IR\MILG0IR-home-windows-x64\obj\Debug\MILG0IR home windows x64.exe
+C:\Users\Robert\GitHub\MILG0IR\MILG0IR-home-windows-x64\obj\Debug\MILG0IR home windows x64.pdb

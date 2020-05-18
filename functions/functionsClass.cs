@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
 
@@ -11,7 +12,7 @@ namespace MILG0IR_home_windows_x64.functions {
         }
         public void application_resize() {
         }
-        public void application_close(Boolean completeClose) {
+        public void application_close() {
             Application.Exit();
         }
         public void application_sleep(int time) {
@@ -31,16 +32,19 @@ namespace MILG0IR_home_windows_x64.functions {
                 MG_minimise.BackColor = Color.Transparent;
                 MG_minimise.FlatStyle = FlatStyle.Flat;
                 MG_minimise.FlatAppearance.BorderSize = 0;
+                MG_minimise.Click += new EventHandler(MG_minimise_Click);
             var MG_resize = new Button();
                 MG_resize.Dock = DockStyle.Right;
                 MG_resize.BackColor = Color.Transparent;
                 MG_resize.FlatStyle = FlatStyle.Flat;
                 MG_resize.FlatAppearance.BorderSize = 0;
+                MG_resize.Click += new EventHandler(MG_resize_Click);
             var MG_close = new Button();
                 MG_close.Dock = DockStyle.Right;
                 MG_close.BackColor = Color.Transparent;
                 MG_close.FlatStyle = FlatStyle.Flat;
                 MG_close.FlatAppearance.BorderSize = 0;
+                MG_close.Click += new EventHandler(MG_close_Click);
             parent.Controls.Add(MG_titlebar);
             MG_titlebar.Controls.Add(MG_title);
             MG_titlebar.Controls.Add(MG_minimise);
@@ -48,6 +52,20 @@ namespace MILG0IR_home_windows_x64.functions {
             MG_titlebar.Controls.Add(MG_close);
 
         }
-
+        private void MG_close_Click(object sender, EventArgs e) {
+            application_close();
+        }
+        private void MG_resize_Click(object sender, EventArgs e) {
+            var parent = Application.OpenForms.Cast<Form>().Last();
+            if (parent.WindowState == FormWindowState.Maximized) {
+                parent.WindowState = FormWindowState.Normal;
+            } else {
+                parent.WindowState = FormWindowState.Maximized;
+            }
+        }
+        private void MG_minimise_Click(object sender, EventArgs e) {
+            var parent = Application.OpenForms.Cast<Form>().Last();
+            parent.WindowState = FormWindowState.Minimized;
+        }
     }
 }
