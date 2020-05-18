@@ -40,7 +40,7 @@
             // 
             // timer
             // 
-            this.timer.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // progressBar
             // 

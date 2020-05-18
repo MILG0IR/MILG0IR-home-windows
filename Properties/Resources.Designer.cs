@@ -69,5 +69,15 @@ namespace MILG0IR_home_windows_x64.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] segoe_mdl2_assets {
+            get {
+                object obj = ResourceManager.GetObject("segoe_mdl2_assets", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
