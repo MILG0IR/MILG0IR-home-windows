@@ -2,10 +2,16 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MILG0IR_home_windows_x64.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="URI" Type="System.String" Scope="Application">
+    <Setting Name="URI" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="API_KEY" Type="System.String" Scope="Application">
+    <Setting Name="API_KEY" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="user" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="pass" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

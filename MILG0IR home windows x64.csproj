@@ -62,7 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MILG0IR.cs" />
+    <Compile Include="MILG0IR_home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MILG0IR_home.Designer.cs">
+      <DependentUpon>MILG0IR_home.cs</DependentUpon>
+    </Compile>
     <Compile Include="MILG0IR_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +89,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MILG0IR_home.resx">
+      <DependentUpon>MILG0IR_home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MILG0IR_login.resx">
       <DependentUpon>MILG0IR_login.cs</DependentUpon>
     </EmbeddedResource>

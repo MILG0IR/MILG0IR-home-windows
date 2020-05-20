@@ -31,10 +31,13 @@ namespace MILG0IR_home_windows_x64 {
         private void Timer1_Tick(object sender, EventArgs e) {
             progressBar.Increment(1);
             if (progressBar.Value == 15) {
-                if (Settings.Default.API_KEY == "" && Settings.Default.URI == "") {
+                if (Settings.Default.API_KEY == "" || Settings.Default.URI == "") { // User has not complete setup
                     new MILG0IR_connect().Show();
                 } else {
-                    MessageBox.Show("SET \n TODO - Check the connection and return an errror message ic unable to connect");
+                    if(Settings.Default.user == "" && Settings.Default.pass== "") { // User is not logged in
+                        new MILG0IR_login().Show();
+                    }
+                    new MILG0IR_home().Show(); // User has complete setup and logged in.
                 }
                 this.Hide();
             }

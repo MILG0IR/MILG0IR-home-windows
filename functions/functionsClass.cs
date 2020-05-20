@@ -7,12 +7,16 @@ using System.Windows.Forms;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Collections.Generic;
 
 namespace MILG0IR_home_windows_x64.functions {
-    public class Functions{
+    public class Functions {
+        public Timer MG_time;
+        public Label MG_title;
         private bool mouseDown;
         private Point lastLocation;
-        public void init(int time) { }
+        public List<JobTimer> _timers = new List<JobTimer>();
+
         public void application_sleep(int time) {
             PrivateFontCollection pfc = new PrivateFontCollection();
             int fontLength = Properties.Resources.segoe_mdl2_assets.Length;
@@ -38,7 +42,8 @@ namespace MILG0IR_home_windows_x64.functions {
                 MG_titlebar.MouseDown += new MouseEventHandler(titlebar_MouseDown);
                 MG_titlebar.MouseMove+= new MouseEventHandler(titlebar_MouseMove);
                 MG_titlebar.MouseUp+= new MouseEventHandler(titlebar_MouseUp);
-            var MG_title = new Label();
+            MG_title = new Label();
+                MG_title.AutoSize = true;
                 MG_title.Text = title;
                 MG_title.Anchor = AnchorStyles.Top;
                 MG_title.Font = new Font("Arial", 12, FontStyle.Regular);
@@ -48,6 +53,12 @@ namespace MILG0IR_home_windows_x64.functions {
                 MG_title.MouseDown += new MouseEventHandler(titlebar_MouseDown);
                 MG_title.MouseMove += new MouseEventHandler(titlebar_MouseMove);
                 MG_title.MouseUp += new MouseEventHandler(titlebar_MouseUp);
+                if (title == "MG_time") MG_title.Text = DateTime.Now.ToString("ddd, dd MMM - HH:mm");
+            MG_time = new Timer();
+                MG_time.Enabled = true;
+                if (title == "MG_time") MG_time.Tick += new System.EventHandler(Update_time);
+            var job = new JobTimer();
+                job.Timer = MG_time;
             var MG_minimise = new Button();
                 MG_minimise.Text = "";
                 MG_minimise.Width = 45;
@@ -61,8 +72,8 @@ namespace MILG0IR_home_windows_x64.functions {
                 MG_minimise.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 53, 83);
                 MG_minimise.FlatAppearance.MouseDownBackColor = Color.FromArgb(63, 63, 92);
                 MG_minimise.Click += new EventHandler(MG_action_minimise);
-            var MG_resize = new Button ();
-            MG_resize.Text = "";
+                var MG_resize = new Button();
+                MG_resize.Text = "";
                 if (parent.WindowState == FormWindowState.Maximized) MG_resize.Text = "";
                 MG_resize.Width = 45;
                 MG_resize.TabStop = false;
@@ -75,7 +86,7 @@ namespace MILG0IR_home_windows_x64.functions {
                 MG_resize.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 53, 83);
                 MG_resize.FlatAppearance.MouseDownBackColor = Color.FromArgb(63, 63, 92);
                 MG_resize.Click += new EventHandler(MG_action_resize);
-            var MG_close = new Button();
+                var MG_close = new Button();
                 MG_close.Text = "";
                 MG_close.Width = 45;
                 MG_close.TabStop = false;
@@ -88,25 +99,29 @@ namespace MILG0IR_home_windows_x64.functions {
                 MG_close.FlatAppearance.MouseOverBackColor = Color.FromArgb(127, 255, 0, 0);
                 MG_close.FlatAppearance.MouseDownBackColor = Color.FromArgb(191, 255, 0, 0);
                 MG_close.Click += new EventHandler(MG_action_close);
-            parent.Controls.Add(MG_titlebar);
-            MG_titlebar.Controls.Add(MG_title);
-            if (minimise == true) MG_titlebar.Controls.Add(MG_minimise);
-            if (resize == true) MG_titlebar.Controls.Add(MG_resize);
-            if (close == true) MG_titlebar.Controls.Add(MG_close);
-
+                parent.Controls.Add(MG_titlebar);
+                if (title == "MG_time") _timers.Add(job); MG_time.Start();
+                MG_titlebar.Controls.Add(MG_title);
+                if (minimise == true) MG_titlebar.Controls.Add(MG_minimise);
+                if (resize == true) MG_titlebar.Controls.Add(MG_resize);
+                if (close == true) MG_titlebar.Controls.Add(MG_close);
         }
+
+        private void Update_time(object sender, EventArgs e) {
+            MG_title.Text = DateTime.Now.ToString("ddd, dd MMM - HH:mm");
+        }
+
         private void MG_action_close(object sender, EventArgs e) {
             Application.Exit();
         }
         private void MG_action_resize(object sender, EventArgs e) {
             var parent = Application.OpenForms.Cast<Form>().Last();
+            Button btn = sender as Button;
             if (parent.WindowState == FormWindowState.Maximized) {
                 parent.WindowState = FormWindowState.Normal;
-                Button btn = sender as Button;
                 btn.Text = "";
             } else {
                 parent.WindowState = FormWindowState.Maximized;
-                Button btn = sender as Button;
                 btn.Text = "";
             }
         }
@@ -127,6 +142,10 @@ namespace MILG0IR_home_windows_x64.functions {
         }
         private void titlebar_MouseUp(object sender, MouseEventArgs e) {
             mouseDown = false;
+        }
+        public class JobTimer {
+            public Timer Timer { get; set; }
+            public string ID { get; set; }
         }
     }
     public class Http {
@@ -151,6 +170,7 @@ namespace MILG0IR_home_windows_x64.functions {
             string postData = data;
             byte[] byteArray = Encoding.UTF8.GetBytes(postData);
             request.ContentType = "application/x-www-form-urlencoded";
+
             request.ContentLength = byteArray.Length;
             dataStream = request.GetRequestStream();
             dataStream.Write(byteArray, 0, byteArray.Length);
