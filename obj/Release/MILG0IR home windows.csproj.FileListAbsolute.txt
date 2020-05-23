@@ -1,0 +1,28 @@
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\MILG0IR home windows.exe.config
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\MILG0IR home windows.exe.manifest
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\MILG0IR home windows.application
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\MILG0IR home windows.exe
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\MILG0IR home windows.pdb
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\EasyHttp.dll
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\Echovoice.JSON.dll
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\JsonFx.dll
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\Newtonsoft.Json.dll
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\EasyHttp.pdb
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\Echovoice.JSON.pdb
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\Echovoice.JSON.xml
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\JsonFx.xml
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Release\Newtonsoft.Json.xml
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR home windows.csprojAssemblyReference.cache
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR_home_windows_x64.MILG0IR_home.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR_home_windows.MILG0IR_initialize.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR_home_windows_x64.MILG0IR_login.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR_home_windows_x64.MILG0IR_connect.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR_home_windows_x64.MILG0IR_splash.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR_home_windows.Properties.Resources.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR home windows.csproj.GenerateResource.cache
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR home windows.csproj.CoreCompileInputs.cache
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR home windows.exe.manifest
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR home windows.application
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR home windows.csproj.CopyComplete
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR home windows.exe
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Release\MILG0IR home windows.pdb

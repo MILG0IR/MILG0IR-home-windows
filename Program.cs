@@ -6,9 +6,6 @@ using System.Windows.Forms;
 
 namespace MILG0IR_home_windows_x64 {
     static class Program {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main() {
             Application.EnableVisualStyles();

@@ -58,6 +58,7 @@
             this.Controls.Add(this.Logo);
             this.Name = "MILG0IR_splash";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MILG0IR_splash_FormClosed);
             this.Load += new System.EventHandler(this.MILG0IR_splash_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);

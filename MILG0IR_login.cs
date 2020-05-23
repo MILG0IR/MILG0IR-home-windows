@@ -2,8 +2,9 @@
 using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
-using MILG0IR_home_windows_x64.functions;
-using MILG0IR_home_windows_x64.Properties;
+using MILG0IR_home_windows;
+using MILG0IR_home_windows.functions;
+using MILG0IR_home_windows.Properties;
 
 namespace MILG0IR_home_windows_x64 {
     public partial class MILG0IR_login : Form {
@@ -18,6 +19,7 @@ namespace MILG0IR_home_windows_x64 {
         public Label Title;
         public Label Subtitle;
         public MILG0IR_login() { InitializeComponent(); }
+        
         private void MILG0IR_home_Load(object sender, EventArgs e) {
             FormBorderStyle = FormBorderStyle.None;
             BackColor = Color.FromArgb(39, 41, 61);
@@ -25,11 +27,11 @@ namespace MILG0IR_home_windows_x64 {
             MaximumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
             var pos = new Point((Screen.PrimaryScreen.WorkingArea.Width / 2) - (Width / 2), (Screen.PrimaryScreen.WorkingArea.Height / 2) - (Height / 2));
             Location = pos;
-            MILG0IR_init.create_title_bar("MILG0IR home", true, false, true);
+            MILG0IR_init.Create_title_bar("MILG0IR home", true, false, true);
             InitForm();
-            InitGraphics();
         }
-        private void InitGraphics() {
+        private void MILG0IR_login_FormClosed(object sender, FormClosedEventArgs e) {
+            MILG0IR.Close();
         }
         private void InitForm() {
             Backpanel = new Panel();
@@ -51,13 +53,15 @@ namespace MILG0IR_home_windows_x64 {
                 Subtitle.Text = "Log in below to accesss your new home.";
             Username = new TextBox();
                 Username.AutoSize = true;
+                Username.TabIndex = 1;
                 Username.Font = new Font("Arial", 20, FontStyle.Regular);
                 Username.BackColor = Color.FromArgb(39, 41, 61);
-                Username.ForeColor = Color.FromArgb(255, 255, 255);
+                Username.ForeColor = Color.FromArgb(117, 117, 117);
                 Username.BorderStyle = BorderStyle.None;
                 Username.Width = Backpanel.Width - 50;
                 Username.Location = new Point(25, Convert.ToInt32(Backpanel.Height * 0.45));
                 Username.Text = "Username";
+                Username.Name = "Username";
                 Username.Enter += new EventHandler(MILG0IR.Input_Focused);
                 Username.Leave += new EventHandler(MILG0IR.Input_Unfocused);
             Username_u = new Panel();
@@ -67,14 +71,15 @@ namespace MILG0IR_home_windows_x64 {
                 Username_u.Width = Backpanel.Width - 50;
             Password = new TextBox();
                 Password.AutoSize = true;
+                Password.TabIndex = 2;
                 Password.Font = new Font("Arial", 20, FontStyle.Regular);
                 Password.BackColor = Color.FromArgb(39, 41, 61);
-                Password.ForeColor = Color.FromArgb(255, 255, 255);
+                Password.ForeColor = Color.FromArgb(117, 117, 117);
                 Password.BorderStyle = BorderStyle.None;
                 Password.Width = Backpanel.Width - 50;
                 Password.Location = new Point(25, Convert.ToInt32(Backpanel.Height * 0.55));
-                Password.Text = "Passsword";
-                Password.Name = "Passsword";
+                Password.Text = "Password";
+                Password.Name = "Password";
                 Password.Enter += new EventHandler(MILG0IR.Input_Focused);
                 Password.Leave += new EventHandler(MILG0IR.Input_Unfocused);
             Password_u = new Panel();
@@ -84,6 +89,7 @@ namespace MILG0IR_home_windows_x64 {
                 Password_u.Width = Backpanel.Width - 50;
             SubmitBtn = new Button();
                 SubmitBtn.AutoSize = true;
+                SubmitBtn.TabIndex = 3;
                 SubmitBtn.Width = Backpanel.Width - (Width / 2);
                 SubmitBtn.Font = new Font("Arial", 20, FontStyle.Regular);
                 SubmitBtn.Location = new Point((Width / 4), Convert.ToInt32(Backpanel.Height * 0.65));
@@ -102,34 +108,21 @@ namespace MILG0IR_home_windows_x64 {
                 Backpanel.Controls.Add(SubmitBtn);
         }
         private void Connx(object sender, EventArgs e) {
-            string uri = Settings.Default.URI;
-            string user = Username.Text;
-            string pass = Password.Text;
-            if (user!= "") {
-                try {
-                    var myRequest = new Http(uri + "api/index.php", "POST", "$=login&_=key&e="+user+ "&p="+pass);
-                    if (myRequest.GetResponse() == "success") {
-                        MessageBox.Show("Login success.");
-                        Close();
-                        new MILG0IR_home().Show();
-                    } else {
-                        try {
-                            var search_code = new Http(uri + "api/index.php", "GET", "$=search_code&_=key&code=" + myRequest.GetResponse());
-                            MessageBox.Show(search_code.ToString());
-                        } catch (WebException ex) {
-                            MessageBox.Show(ex.Message + "", ex.Status + "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                } catch (WebException ex) {
-                    MessageBox.Show(ex.Message + "", ex.Status + "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string user = (Username.Text == Username.Name) ? null : Username.Text;
+            string pass = (Password.Text == Password.Name) ? "" : Password.Text;
+            if (user!= null) {
+                var status = MILG0IR.Login(user, pass);
+                if (status == "success") {
+                    Settings.Default.Username= user;
+                    Settings.Default.Password= pass;
+                    Settings.Default.Save();
+                    Hide();
+                    new MILG0IR_initialize().Show();
+                } else {
+                    MessageBox.Show(MILG0IR.Error_search(status).Description);
                 }
-            } else {
-
             }
         }
 
-        private void MILG0IR_login_FormClosed(object sender, FormClosedEventArgs e) {
-            Application.Exit();
-        }
     }
 }

@@ -16,16 +16,21 @@
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <UpdateUrl>http://localhost/MILG0IR home windows/</UpdateUrl>
+    <TargetCulture>en-GB</TargetCulture>
+    <ProductName>home</ProductName>
+    <PublisherName>MILG0IR</PublisherName>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -48,10 +53,42 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5C6784E95E0578E862A287805FE6C32E20F85E42</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MILG0IR home windows_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EasyHttp, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EasyHttp.1.7.0\lib\net40\EasyHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="Echovoice.JSON, Version=2.0.15151.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Echovoice.JSON.2.0.15151.1\lib\Echovoice.JSON.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonFx, Version=2.0.1209.2802, Culture=neutral, PublicKeyToken=315052dd637f8a52, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JsonFx.2.0.1209.2802\lib\net40\JsonFx.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
@@ -62,6 +99,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="functions\Variables.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="MILG0IR_initialize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MILG0IR_initialize.Designer.cs">
+      <DependentUpon>MILG0IR_initialize.cs</DependentUpon>
+    </Compile>
     <Compile Include="MILG0IR_home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +137,9 @@
     <EmbeddedResource Include="MILG0IR_home.resx">
       <DependentUpon>MILG0IR_home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MILG0IR_initialize.resx">
+      <DependentUpon>MILG0IR_initialize.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MILG0IR_login.resx">
       <DependentUpon>MILG0IR_login.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +154,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="MILG0IR home windows_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

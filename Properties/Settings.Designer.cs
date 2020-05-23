@@ -26,12 +26,12 @@ namespace MILG0IR_home_windows.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string URI {
+        public string API_URI {
             get {
-                return ((string)(this["URI"]));
+                return ((string)(this["API_URI"]));
             }
             set {
-                this["URI"] = value;
+                this["API_URI"] = value;
             }
         }
         
@@ -50,24 +50,60 @@ namespace MILG0IR_home_windows.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string user {
+        public string Username {
             get {
-                return ((string)(this["user"]));
+                return ((string)(this["Username"]));
             }
             set {
-                this["user"] = value;
+                this["Username"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string pass {
+        public string Password {
             get {
-                return ((string)(this["pass"]));
+                return ((string)(this["Password"]));
             }
             set {
-                this["pass"] = value;
+                this["Password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public global::System.Windows.Forms.FormWindowState WindowState {
+            get {
+                return ((global::System.Windows.Forms.FormWindowState)(this["WindowState"]));
+            }
+            set {
+                this["WindowState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size WindowSize {
+            get {
+                return ((global::System.Drawing.Size)(this["WindowSize"]));
+            }
+            set {
+                this["WindowSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point WindowLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["WindowLocation"]));
+            }
+            set {
+                this["WindowLocation"] = value;
             }
         }
     }

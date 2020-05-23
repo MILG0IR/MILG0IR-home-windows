@@ -1,0 +1,28 @@
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR home windows.csprojAssemblyReference.cache
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR_home_windows_x64.MILG0IR_home.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR_home_windows_x64.MILG0IR_login.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR_home_windows_x64.MILG0IR_connect.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR_home_windows_x64.MILG0IR_splash.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR_home_windows.Properties.Resources.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR home windows.csproj.GenerateResource.cache
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR home windows.csproj.CoreCompileInputs.cache
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\MILG0IR home windows.exe.config
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\MILG0IR home windows.exe
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\MILG0IR home windows.pdb
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR home windows.exe
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR home windows.pdb
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\MILG0IR home windows.exe.manifest
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\MILG0IR home windows.application
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR home windows.exe.manifest
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR home windows.application
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR_home_windows.MILG0IR_initialize.resources
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\EasyHttp.dll
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\JsonFx.dll
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\EasyHttp.pdb
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\JsonFx.xml
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\obj\Debug\MILG0IR home windows.csproj.CopyComplete
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\Echovoice.JSON.dll
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\Echovoice.JSON.pdb
+C:\Users\Robert\GitHub\MILG0IR\Files\MILG0IR home windows\bin\Debug\Echovoice.JSON.xml

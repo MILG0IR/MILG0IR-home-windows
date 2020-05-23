@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Design;
+using System.Net;
+using System.Security.Cryptography;
 using System.Windows.Forms;
-using MILG0IR_home_windows_x64.Properties;
+using MILG0IR_home_windows.functions;
+using MILG0IR_home_windows.Properties;
 
 namespace MILG0IR_home_windows_x64 {
     public partial class MILG0IR_splash : Form {
+        readonly Functions MILG0IR = new Functions();
         public MILG0IR_splash() { InitializeComponent(); }
         private void MILG0IR_splash_Load(object sender, EventArgs e) {
             progressBar.Visible = false;
@@ -31,16 +36,24 @@ namespace MILG0IR_home_windows_x64 {
         private void Timer1_Tick(object sender, EventArgs e) {
             progressBar.Increment(1);
             if (progressBar.Value == 15) {
-                if (Settings.Default.API_KEY == "" || Settings.Default.URI == "") { // User has not complete setup
-                    new MILG0IR_connect().Show();
-                } else {
-                    if(Settings.Default.user == "" && Settings.Default.pass== "") { // User is not logged in
-                        new MILG0IR_login().Show();
+                if(Settings.Default.API_URI != "") {
+                    if (MILG0IR.Test_Connection()) {
+                        if (MILG0IR.Test_Login()) {
+                            MILG0IR.ChangeForm(new MILG0IR_home());
+                        } else {
+                            MILG0IR.ChangeForm(new MILG0IR_login());
+                        }
+                    } else {
+                        MILG0IR.ChangeForm(new MILG0IR_connect());
                     }
-                    new MILG0IR_home().Show(); // User has complete setup and logged in.
+                } else {
+                    MILG0IR.ChangeForm(new MILG0IR_connect());
                 }
-                this.Hide();
             }
+        }
+
+        private void MILG0IR_splash_FormClosed(object sender, FormClosedEventArgs e) {
+            MILG0IR.Close();
         }
     }
 }
